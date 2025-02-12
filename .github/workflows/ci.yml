@@ -41,6 +41,11 @@ jobs:
             ${{ runner.os }}-node-
       - name: Enable corepack
         run: corepack enable
+      - name: Yarn clean cache
+        uses: borales/actions-yarn@v5
+        with:
+          cmd: cache clean
+          dir: web
       - name: Run install
         uses: borales/actions-yarn@v5
         with:
