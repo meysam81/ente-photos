@@ -56,11 +56,13 @@ jobs:
           NEXT_PUBLIC_ENTE_ALBUMS_ENDPOINT: https://photos.meysam.io
       - name: Setup Pages
         uses: actions/configure-pages@v5
-      - name: Upload Pages artifact
+      - id: upload-artifact
+        name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           name: dist-${{ github.ref_name }}-${{ github.run_id }}
           path: web/apps/photos/out
       - name: Deploy to GitHub Pages
-        id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          artifact_name: ${{ steps.upload-artifact.outputs.artifact_id }}
