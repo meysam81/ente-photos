@@ -28,6 +28,7 @@ jobs:
           repository: ente-io/ente
           ref: main
           token: ${{ github.token }}
+          submodules: recursive
       - name: Set Node.js
         uses: actions/setup-node@v4
         with:
