@@ -52,7 +52,7 @@ jobs:
           cmd: build:photos
           dir: web
         env:
-          ENV NEXT_PUBLIC_ENTE_ENDPOINT: https://ente.meysam.io
+          NEXT_PUBLIC_ENTE_ENDPOINT: https://ente.meysam.io
           NEXT_PUBLIC_ENTE_ALBUMS_ENDPOINT: https://photos.meysam.io
       - name: Setup Pages
         uses: actions/configure-pages@v5
