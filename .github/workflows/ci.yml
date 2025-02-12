@@ -60,9 +60,6 @@ jobs:
         name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          name: dist-${{ github.ref_name }}-${{ github.run_id }}
           path: web/apps/photos/out
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
-        with:
-          artifact_name: ${{ steps.upload-artifact.outputs.artifact_id }}
