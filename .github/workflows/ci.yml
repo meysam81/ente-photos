@@ -9,6 +9,8 @@ on:
     branches:
       - main
   workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * *"
 
 permissions:
   contents: read
@@ -47,12 +49,12 @@ jobs:
         with:
           cmd: cache clean
           dir: web
-      - name: Run install
+      - name: Yarn install
         uses: borales/actions-yarn@v5
         with:
           cmd: install
           dir: web
-      - name: Build production bundle
+      - name: Yarn build
         uses: borales/actions-yarn@v5
         with:
           cmd: build:photos
