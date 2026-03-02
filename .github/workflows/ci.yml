@@ -66,7 +66,7 @@ jobs:
         uses: actions/configure-pages@v5
       - id: upload-artifact
         name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: web/apps/photos/out
       - name: Deploy to GitHub Pages
